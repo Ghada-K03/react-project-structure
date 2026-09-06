@@ -1,75 +1,84 @@
-# React + TypeScript + Vite
+# React Project Structure
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and scalable React project structure built using React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Objective
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The purpose of this project is to demonstrate a professional and maintainable folder structure for a React application.
 
-## React Compiler
+## Technologies
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- ESLint
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/
+├── components/
+│   ├── ui/
+│   │   ├── Button.tsx
+│   │   └── Input.tsx
+│   ├── layout/
+│   │   ├── Navbar.tsx
+│   │   └── Footer.tsx
+│   ├── providers/
+│   │   └── AppProvider.tsx
+│   ├── skeleton/
+│   │   └── LoadingSkeleton.tsx
+│   └── common/
+│       └── EmptyState.tsx
+│
+├── hooks/
+│   └── useDebounce.ts
+├── api/
+│   └── axios.ts
+├── types/
+│   └── user.types.ts
+├── store/
+│   └── auth.store.ts
+├── pages/
+│   ├── Home.tsx
+│   └── About.tsx
+├── constants/
+│   └── routes.ts
+├── i18n/
+│   ├── config.ts
+│   └── en.json
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   └── fonts/
+├── schemas/
+│   └── user.schema.ts
+└── utils/
+    └── formatDate.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Folder Description
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **components** - Reusable React components.
+- **hooks** - Custom React hooks.
+- **api** - API configuration and requests.
+- **types** - TypeScript types and interfaces.
+- **store** - Global state management.
+- **pages** - Application pages.
+- **constants** - Constant values and routes.
+- **i18n** - Internationalization and translations.
+- **assets** - Images, icons, and fonts.
+- **schemas** - Validation schemas.
+- **utils** - Reusable utility functions.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Installation
 
+```bash
+npm install
+```
+
+## Run the Project
+
+```bash
+npm run dev
 ```
