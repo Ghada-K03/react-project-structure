@@ -1,84 +1,59 @@
-# React Project Structure
+## Assignment 2 - Reusable Components in React
 
-A clean and scalable React project structure built using React, TypeScript, and Vite.
+This assignment demonstrates the concept of reusable components in React using props and children.
 
-## Objective
+### Components
 
-The purpose of this project is to demonstrate a professional and maintainable folder structure for a React application.
+#### Button
 
-## Technologies
+A reusable Button component that accepts:
 
-- React
-- TypeScript
-- Vite
-- ESLint
+- `text` - The text displayed on the button.
+- `onClick` - Function to handle click events.
+- `variant` - Button style (`primary`, `secondary`, or `danger`).
+- `disabled` - Optional boolean to disable the button.
 
-## Project Structure
+The Button component is used multiple times with different props.
+
+#### Card
+
+A reusable Card component that accepts:
+
+- `title` - Card title.
+- `description` - Card description.
+- `image` - Optional image URL.
+- `children` - Allows nested content inside the card.
+
+The Card component is used multiple times with different data, and the `children` prop is demonstrated by placing a Button inside a Card.
+
+#### Table
+
+A reusable Table component that accepts:
+
+- `columns` - Array of column headers.
+- `data` - Array of objects representing table rows.
+- `striped` - Optional boolean for striped rows.
+
+The Table component displays a list of students.
+
+### Assignment 2 Structure
 
 ```text
 src/
-├── components/
-│   ├── ui/
-│   │   ├── Button.tsx
-│   │   └── Input.tsx
-│   ├── layout/
-│   │   ├── Navbar.tsx
-│   │   └── Footer.tsx
-│   ├── providers/
-│   │   └── AppProvider.tsx
-│   ├── skeleton/
-│   │   └── LoadingSkeleton.tsx
-│   └── common/
-│       └── EmptyState.tsx
-│
-├── hooks/
-│   └── useDebounce.ts
-├── api/
-│   └── axios.ts
-├── types/
-│   └── user.types.ts
-├── store/
-│   └── auth.store.ts
-├── pages/
-│   ├── Home.tsx
-│   └── About.tsx
-├── constants/
-│   └── routes.ts
-├── i18n/
-│   ├── config.ts
-│   └── en.json
-├── assets/
-│   ├── images/
-│   ├── icons/
-│   └── fonts/
-├── schemas/
-│   └── user.schema.ts
-└── utils/
-    └── formatDate.ts
+└── assignment2/
+    ├── Assignment2.jsx
+    ├── Assignment2.css
+    ├── Button.jsx
+    ├── Card.jsx
+    └── Table.jsx
 ```
 
-## Folder Description
+### Concepts Demonstrated
 
-- **components** - Reusable React components.
-- **hooks** - Custom React hooks.
-- **api** - API configuration and requests.
-- **types** - TypeScript types and interfaces.
-- **store** - Global state management.
-- **pages** - Application pages.
-- **constants** - Constant values and routes.
-- **i18n** - Internationalization and translations.
-- **assets** - Images, icons, and fonts.
-- **schemas** - Validation schemas.
-- **utils** - Reusable utility functions.
-
-## Installation
-
-```bash
-npm install
-```
-
-## Run the Project
-
-```bash
-npm run dev
-```
+- Reusable React components
+- Props
+- Children prop
+- Conditional rendering
+- Rendering lists using `map()`
+- Event handling
+- Component styling
